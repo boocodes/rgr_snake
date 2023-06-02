@@ -84,7 +84,9 @@ public class SidePanel extends JPanel {
          */
         g.setFont(MEDIUM_FONT);
         g.drawString("Статистика", SMALL_OFFSET, STATISTICS_OFFSET);
-        g.drawString("Управление", SMALL_OFFSET, CONTROLS_OFFSET);
+        if(game.getUsername() != null){
+            g.drawString("Ваше имя: " + game.getUsername(), 35, 280);
+        }
 
         /*
          * Draw the category content onto the window.
@@ -96,13 +98,9 @@ public class SidePanel extends JPanel {
         g.drawString("Общий балл: " + game.getScore(), LARGE_OFFSET, drawY += MESSAGE_STRIDE);
         g.drawString("Съеденных фруктов: " + game.getFruitsEaten(), LARGE_OFFSET, drawY += MESSAGE_STRIDE);
         g.drawString("Баллы за фрукт: " + game.getNextFruitScore(), LARGE_OFFSET, drawY += MESSAGE_STRIDE);
-        //Draw the content for the controls category.
-        drawY = CONTROLS_OFFSET;
-        g.drawString("Переместить вверх: W/стрелка вверх", LARGE_OFFSET, drawY += MESSAGE_STRIDE);
-        g.drawString("Переместить вниз: S/стрелка вниз", LARGE_OFFSET, drawY += MESSAGE_STRIDE);
-        g.drawString("Переместить влево: A/стрелка влево", LARGE_OFFSET, drawY += MESSAGE_STRIDE);
-        g.drawString("Переместить вправо: D/стрелка вправо", LARGE_OFFSET, drawY += MESSAGE_STRIDE);
-        g.drawString("Приостановить игру: P", LARGE_OFFSET, drawY += MESSAGE_STRIDE);
+
+        SaveSession saveSession = new SaveSession();
+        saveSession.showBestPlayers(g);
     }
 
 }

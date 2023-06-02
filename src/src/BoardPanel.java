@@ -139,6 +139,7 @@ public class BoardPanel extends JPanel {
                     if(!Objects.equals(askUsernameField.getText(), "") && !Objects.equals(askUsernameField, '\n')){
                         current.remove(askUsernameField);
                         setUsername(askUsernameField.getText());
+                        game.setUsername(askUsernameField.getText());
                         askUsernameField.removeKeyListener(this);
                     }
                 }
@@ -257,7 +258,7 @@ public class BoardPanel extends JPanel {
             String smallMessage = null;
             if(game.isNewGame()) {
                 largeMessage = "Введите ваше имя";
-                saveSession.showBestPlayers(g);
+
                 smallMessage = "Нажмите Enter, чтобы начать игру";
 
             } else if(game.isGameOver()) {

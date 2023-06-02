@@ -32,6 +32,9 @@ public class SnakeGame extends JFrame {
      */
     private static final int MIN_SNAKE_LENGTH = 5;
 
+
+    private static String username;
+
     /**
      * The maximum number of directions that we can have polled in the
      * direction list.
@@ -49,7 +52,15 @@ public class SnakeGame extends JFrame {
     private SidePanel side;
 
 
-    private AskUsername askUsername;
+
+    public void setUsername(String argUsername){
+        username = argUsername;
+    }
+
+    public String getUsername(){
+        return username;
+    }
+
 
     /**
      * The random number generator (used for spawning fruits).
@@ -130,7 +141,6 @@ public class SnakeGame extends JFrame {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                System.out.println(e);
                 switch(e.getKeyCode()) {
 
                     /*

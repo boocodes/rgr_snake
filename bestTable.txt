@@ -1,4 +1,14 @@
-Ник: 77
-Але: 80
-cat: 404
-dime: 100
+ник=564
+not=537
+hi=488
+aloha=290
+mem=249
+Ник=214
+out2=169
+ale=101
+out=88
+privet=76
+desyat=10
+devyat=9
+vosem=8
+why=0
